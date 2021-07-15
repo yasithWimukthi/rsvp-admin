@@ -9,8 +9,8 @@ addAuthIntecepter(apiInstance);
 
 apiInstance.interceptors.request.use(
   async function (config) {
-    // config.baseURL = "http://localhost:4000/api/v1";
-    config.baseURL = "https://packaging-lite-api.herokuapp.com/api/v1";
+    // config.baseURL = "http://localhost:4000/";
+    config.baseURL = "https://rsvp-backend.herokuapp.com";
     return config;
   },
   function (error) {

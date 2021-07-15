@@ -9,11 +9,9 @@ export async function ImageUploader(imageFile) {
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
-        console.log(snapshot);
         return snapshot;
       },
       (error) => {
-        console.log(error);
         return error;
       },
       () => {
@@ -25,13 +23,11 @@ export async function ImageUploader(imageFile) {
             return url;
           })
           .catch((e) => {
-            console.log(e);
             return e;
           });
       }
     );
   } catch (error) {
-    console.log(error);
     return error;
   }
 }
