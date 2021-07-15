@@ -1,0 +1,65 @@
+.newTaskBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: 60px;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+  
+  .filterButton {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: inherit;
+    height: 60px;
+    background-color: white;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+  
+  .filterIcon {
+    padding: 0px 15px 0px 10px;
+  }
+  
+  .filteringParameter {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: red;
+    padding-left: 1rem;
+    padding-right: 6rem;
+  }
+  
+
+  
+  .categoryTable {
+    border-collapse: collapse;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: white;
+  }
+  
+  .categoryTableHeader {
+    background-color: rgb(2, 29, 182);
+    color: white;
+  }
+  
+  .actionButtons {
+    width: 100px;
+  }
+  
