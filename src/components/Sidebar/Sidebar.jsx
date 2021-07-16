@@ -14,7 +14,7 @@ const SideBar = () => {
         alt="Packaging Lite"
         className="img-fluid"
         style={{
-          width: "6rem",
+          width: "4rem",
           margin: "auto",
           display: "block",
           paddingTop: "3vh",
