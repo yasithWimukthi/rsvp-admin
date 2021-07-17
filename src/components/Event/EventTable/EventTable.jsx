@@ -8,7 +8,7 @@ import {
   TableBody,
   Chip,
 } from "@material-ui/core";
-import ProductTableAction from "./ProductTableAction";
+import EventTableAction from "./EventTableAction";
 import { useFilterRows } from "../../Common/TableViewComponents/useFilterData";
 import Alert from "@material-ui/lab/Alert";
 import { TableFooterPagination } from "../../Common/TableViewComponents/TableFooterPagination";
@@ -22,10 +22,10 @@ function filterData(tableData, searchText = "") {
   );
 }
 
-const ProductTable = ({ products, searchVal }) => {
+const EventTable = ({ Events, searchVal }) => {
   const { pageData, tableFooterProps, noMatchingItems } = useFilterRows(
     searchVal,
-    products,
+    Events,
     filterData
   );
 
@@ -41,7 +41,16 @@ const ProductTable = ({ products, searchVal }) => {
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell>Tags</TableCell>
+              <TableCell>description</TableCell>
+              <TableCell>headerImage</TableCell>
+              <TableCell>photos</TableCell>
+              <TableCell>venue</TableCell>
+              <TableCell>fromDate</TableCell>
+              <TableCell>toDate</TableCell>
+              <TableCell>status</TableCell>
+              <TableCell>speakers</TableCell>
+              <TableCell>createdBy</TableCell>
+              <TableCell>host</TableCell>
               <TableCell>Featured Status</TableCell>
             </TableRow>
           </TableHead>
@@ -50,7 +59,16 @@ const ProductTable = ({ products, searchVal }) => {
             {pageData.map((p) => (
               <TableRow key={p?.id}>
                 <TableCell>{p?.name}</TableCell>
-                <TableCell>{p?.tags}</TableCell>
+                <TableCell>{p?.description}</TableCell>
+                <TableCell>{p?.headerImage}</TableCell>
+                <TableCell>{p?.photos}</TableCell>
+                <TableCell>{p?.venue}</TableCell>
+                <TableCell>{p?.fromDate}</TableCell>
+                <TableCell>{p?.toDate}</TableCell>
+                <TableCell>{p?.status}</TableCell>
+                <TableCell>{p?.speakers}</TableCell>
+                <TableCell>{p?.createdBy}</TableCell>
+                <TableCell>{p?.tahostgs}</TableCell>
                 <TableCell>
                   {p?.isFeatured ? (
                     <Chip size={"small"} color={"primary"} label={"Yes"} />
@@ -60,7 +78,7 @@ const ProductTable = ({ products, searchVal }) => {
                 </TableCell>
                 <TableCell style={{ width: "5rem" }}>
                   <div className="display-flex align-center justify-end">
-                    <ProductTableAction product={p} />
+                    <EventTableAction Event={p} />
                   </div>
                 </TableCell>
               </TableRow>
@@ -69,11 +87,11 @@ const ProductTable = ({ products, searchVal }) => {
         </Table>
       </TableContainer>
 
-      {noMatchingItems && <Alert severity="info">No matching Products</Alert>}
+      {noMatchingItems && <Alert severity="info">No matching Events</Alert>}
 
       <TableFooterPagination {...tableFooterProps} />
     </>
   );
 };
 
-export default ProductTable;
+export default EventTable;

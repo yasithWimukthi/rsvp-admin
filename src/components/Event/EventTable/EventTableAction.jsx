@@ -8,13 +8,13 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { useMutation } from "react-query";
-import { deleteProduct } from "../../../api/product/product.request";
+import { deleteEvent } from "../../../api/event/event.request";
 import { useToast } from "../../../hooks/useToast";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ConfirmationDialog from "../../Common/ConfirmationDialog/ConfirmationDialog";
-import ProductViewModal from "../ProductViewModal/ProductViewModal";
+import EventViewModal from "../EventViewModal/EventViewModal";
 
-function ProductTableAction({ product }) {
+function EventTableAction({ product }) {
   const displayToast = useToast();
   const [openView, setOpenView] = React.useState(false);
   const [openDeleteDialog, setDeleteDialog] = React.useState(false);
@@ -35,12 +35,12 @@ function ProductTableAction({ product }) {
     setDeleteDialog(true);
   };
 
-  const [remove, { status: removeStatus }] = useMutation(deleteProduct, {
+  const [remove, { status: removeStatus }] = useMutation(deleteEvent, {
     onError() {
-      displayToast(`Product ${product?.name} remove failed`, "default");
+      displayToast(`Event ${product?.name} remove failed`, "default");
     },
     onSuccess() {
-      displayToast(`Product ${product?.name} successfully removed.`, "default");
+      displayToast(`Event ${product?.name} successfully removed.`, "default");
     },
   });
 
@@ -101,7 +101,7 @@ function ProductTableAction({ product }) {
         info={product?.name}
       />
 
-      <ProductViewModal
+      <EventViewModal
         isOpen={openView}
         onClose={handleViewClose}
         product={product}
@@ -110,4 +110,4 @@ function ProductTableAction({ product }) {
   );
 }
 
-export default ProductTableAction;
+export default EventTableAction;

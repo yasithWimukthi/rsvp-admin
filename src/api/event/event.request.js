@@ -1,9 +1,13 @@
 import { apiInstance } from "../apiInstance";
 
-export async function addProduct(requestData) {
-  const PATH = "/product/add";
+export async function addEvent(requestData) {
+  const PATH = "/events";
   try {
-    const res = await apiInstance.post(PATH, requestData);
+    const res = await apiInstance.post(PATH, requestData, {
+      headers: {
+        Authorization: window.localStorage.getItem("Token")
+      }
+    });
     const apiRes = res.data;
     return apiRes.success;
   } catch (e) {
@@ -11,8 +15,8 @@ export async function addProduct(requestData) {
   }
 }
 
-export async function getProductById(productId) {
-  const PATH = `/product/get/${productId}`;
+export async function getEventById(productId) {
+  const PATH = `/events/${productId}`;
   try {
     const res = await apiInstance.get(PATH);
     const apiRes = res.data;
@@ -22,8 +26,8 @@ export async function getProductById(productId) {
   }
 }
 
-export async function deleteProduct(productId) {
-  const PATH = `/product/delete/${productId}`;
+export async function deleteEvent(productId) {
+  const PATH = `/events/${productId}`;
   try {
     const res = await apiInstance.delete(PATH);
     const apiRes = res.data;
@@ -33,19 +37,18 @@ export async function deleteProduct(productId) {
   }
 }
 
-export async function getAllProducts() {
-  const PATH = "/product/list";
+export async function getAllEvent() {
+  const PATH = "/events";
   try {
     const res = await apiInstance.get(PATH);
-    const apiRes = res.data;
-    return apiRes.data;
+    return res.data;
   } catch (e) {
     throw e.name;
   }
 }
 
-export async function getProductsBySubcategory(id) {
-  const PATH = "/product/bySubcategory/" + id;
+export async function getEventBySubcategory(id) {
+  const PATH = "/event/bySubcategory/" + id;
   try {
     if (id !== "") {
       const res = await apiInstance.get(PATH);
