@@ -6,6 +6,7 @@ import ProductPage from "./pages/EventPage";
 // import OrderDetails from "./components/Order/OrderDetails";
 // import DispatchedOrders from "./components/Order/DispatchedOrders/DispatchedOrders";
 import Loginpage from "./pages/Login";
+import Login from "./pages/LoginPage";
 
 export const routes = [
   { path: "/", component: Home },
@@ -16,4 +17,5 @@ export const routes = [
   // { path: "/order/:id", component: OrderDetails },
   // { path: "/dispatchedOrders", component: DispatchedOrders },
   { path: "/login", component: Loginpage },
+  { path: "/auth", component: Login },
 ];
