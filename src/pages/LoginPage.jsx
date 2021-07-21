@@ -23,7 +23,7 @@ const Login = () => {
       <div className="w-full h-full bg-white p-5 lg:p-6 lg:pt-12 lg:pb-16 lg:mx-auto lg:my-auto lg:w-4/6 lg:h-5/6 rounded-3xl shadow-ds2 grid row-span-1">
         <div className="flex justify-center items-center lg:grid lg:grid-cols-2">
           <h1 className="text-black text-3xl font-extrabold text-center mb-4">
-            SLIIT RSVP PORTALl
+            SLIIT RSVP PORTAL
           </h1>
           <div></div>
         </div>
